@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DS-M9-W4-Project - Slidify</title>
+  <meta charset="utf-8">
+  <meta name="description" content="DS-M9-W4-Project - Slidify">
+  <meta name="author" content="Channaveer Patil">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  
+  <hgroup class="auto-fadein">
+    <h1>DS-M9-W4-Project - Slidify</h1>
+    <h2></h2>
+    <p>Channaveer Patil<br/>Data Scientist</p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h1>Presenting interactive Shiny application</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <h2>User can select the region to know the Number of telephones in that region</h2>
+
+<ul>
+<li>N.America</li>
+<li>S.America</li>
+<li>Asia </li>
+<li>Africa 
+etc..</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h1>Select region to know the number of telephones</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">library(shiny)
+shinyApp(
+  ui = fluidPage(
+    selectInput(&quot;region&quot;, &quot;Region:&quot;,
+                choices = colnames(WorldPhones)),
+    plotOutput(&quot;phonePlot&quot;)
+  ),
+
+  server = function(input, output) {
+    output$phonePlot = renderPlot({
+      barplot(WorldPhones[,input$region]*1000,
+              ylab = &quot;Number of Telephones&quot;, xlab = &quot;Year&quot;)
+    })
+  },
+  options = list(height = 500)
+)
+</code></pre>
+
+<pre><code>## 
+## Listening on http://127.0.0.1:7216
+</code></pre>
+
+<pre><code>## Warning in normalizePath(path.expand(path), winslash, mustWork):
+## path[1]=&quot;webshot2e80429563a3.png&quot;: The system cannot find the file
+## specified
+</code></pre>
+
+<pre><code>## Warning in file(con, &quot;rb&quot;): cannot open file &#39;C:
+## \Users\H138973\AppData\Local\Temp\RtmpAX4fVX\file2e803874e1\webshot2e80429563a3.png&#39;:
+## No such file or directory
+</code></pre>
+
+<pre><code>## Error in file(con, &quot;rb&quot;): cannot open the connection
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <article data-timings="">
+    <p><img src="fig2.jpg" alt="Sample output"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h3>Shiny App is hosted at: <a href="https://cpatil.shinyapps.io/Shinyapp-Project/">https://cpatil.shinyapps.io/Shinyapp-Project/</a></h3>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Presentation is created using Slidify package It is important to set right working directory to make Slidify work</h3>
+
+<h1>End of the App - Thank you</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Presenting interactive Shiny application'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Select region to know the number of telephones'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Shiny App is hosted at: <a href="https://cpatil.shinyapps.io/Shinyapp-Project/">https://cpatil.shinyapps.io/Shinyapp-Project/</a>'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='NA'>
+         5
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
